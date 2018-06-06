@@ -3,6 +3,7 @@
 var element = document.querySelector('#docspot');
 var size = 4;
 var colors = ["rgb(255, 0, 0)", "rgb(255, 165, 0)", "rgb(255, 255, 0)", "rgb(0, 128, 0)", "rgb(0, 0, 255)", "rgb(75, 0, 130)", "rgb(238, 130, 238)"];
+var speed = 250;
 
 function generateGrid(size, allIds) {
   cellId = 1;
@@ -57,7 +58,7 @@ function run() {
   generateGrid(size, allIds = []);
   setInterval(function () {
     selectCell(selectedIds, allIds)
-  }, 250);
+  }, speed);
 };
 
 // in case the document is already rendered
