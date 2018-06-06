@@ -1,4 +1,4 @@
-//Does not work on IE
+//Does not work on IE computing current style is not supported
 
 var element = document.querySelector('#docspot');
 var size = 4;
