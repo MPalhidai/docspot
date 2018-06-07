@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-//Does not work on IE computing current style is not supported
-
-var element = document.querySelector('#docspot');
-var size = 4;
-var colors = ["rgb(255, 0, 0)", "rgb(255, 165, 0)", "rgb(255, 255, 0)", "rgb(0, 128, 0)", "rgb(0, 0, 255)", "rgb(75, 0, 130)", "rgb(238, 130, 238)"];
-var speed = 250;
-
-function generateGrid(size, allIds) {
-=======
 //Does not work on IE
 //breaks if SIZE^2 <= PAUSE/SPEED (integer devision)
 var ELEMENT = document.querySelector('#docspot');
@@ -17,7 +7,6 @@ var SIZE = 4; // 4 nxn size grid
 var COLORS = ["rgb(255, 0, 0)", "rgb(255, 165, 0)", "rgb(255, 255, 0)", "rgb(0, 128, 0)", "rgb(0, 0, 255)", "rgb(75, 0, 130)", "rgb(238, 130, 238)"];
 
 function generateGrid(SIZE, allIds) {
->>>>>>> dev
   cellId = 1;
   for (var rows = 0; rows < SIZE; rows++) {
     var row = document.createElement("tr");
@@ -70,11 +59,7 @@ function run() {
   generateGrid(SIZE, allIds = []);
   setInterval(function () {
     selectCell(selectedIds, allIds)
-<<<<<<< HEAD
-  }, speed);
-=======
   }, SPEED);
->>>>>>> dev
 };
 
 // in case the document is already rendered
