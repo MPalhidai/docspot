@@ -1,9 +1,9 @@
 //Does not work on IE
-//breaks if SIZE^2 <= PAUSE/SPEED (integer devision)
+//breaks if SIZE^2 <= PAUSE/DELAY (integer devision)
 var ELEMENT = document.querySelector('#docspot');
-var SPEED = 250; // 250 milliseconds pause between function calls
-var PAUSE = 2000; // 2000 milliseconds pause before cell can be selected again
-var SIZE = 4; // 4 nxn size grid
+var DELAY = 250; // pause in milliseconds between function calls
+var PAUSE = 2000; // pause in milliseconds before cell in table can be selected again
+var SIZE = 4; // nxn size table
 var COLORS = ["rgb(255, 0, 0)", "rgb(255, 165, 0)", "rgb(255, 255, 0)", "rgb(0, 128, 0)", "rgb(0, 0, 255)", "rgb(75, 0, 130)", "rgb(238, 130, 238)"];
 
 function generateGrid(SIZE, allIds) {
@@ -48,7 +48,7 @@ function selectCell(selectedIds, allIds) {
 
   //store chosen id to not be chosen again soon
   selectedIds.push(cellId);
-  if (selectedIds.length > PAUSE/SPEED) selectedIds.shift(); // 2 seconds worth of function calls
+  if (selectedIds.length > PAUSE/DELAY) selectedIds.shift(); // 2 seconds worth of function calls
 
   //change cell's background color
   cell.style.backgroundColor = color;
@@ -59,7 +59,7 @@ function run() {
   generateGrid(SIZE, allIds = []);
   setInterval(function () {
     selectCell(selectedIds, allIds)
-  }, SPEED);
+  }, DELAY);
 };
 
 // in case the document is already rendered
